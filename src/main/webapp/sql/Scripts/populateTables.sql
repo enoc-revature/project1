@@ -35,12 +35,12 @@ INSERT INTO reimburse_type_table(   requestId,
                                     reimburseType,
                                     reimbursePercentage
             )
-VALUES  (2948302,'UniversityCourse', 0.8),
-        (2948302,'Seminar', 0.6),
-        (2948302,'CertificationClass', 0.75),
-        (2948302,'Certification', 1.0),
-        (2948302,'TechnicalTraining', 0.9),
-        (2948302,'Other', 0.3)
+VALUES  (2948302,'UniversityCourse'),
+        (2948302,'Seminar'),
+        (2948302,'CertificationClass'5),
+        (2948302,'Certification'),
+        (2948302,'TechnicalTraining'),
+        (2948302,'Other')
 ;
 
 --Enumeration Table
@@ -56,7 +56,7 @@ VALUES  ('UniversityCourse', 0.8),
 ;
 
 
-CREATE TABLE reimburse_enum(
+CREATE TABLE reimburse_enum( -- //TODO: insert values
     reimburseType VARCHAR NOT NULL, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
     reimbursePercentage NUMERIC(3,2) NOT NULL
         CONSTRAINT reimburse_perc_bounds CHECK(reimbursePercentage BETWEEN 0.00 AND 1.00),

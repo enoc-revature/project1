@@ -53,3 +53,5 @@ CREATE TABLE nf0(
     approvalType VARCHAR, -- supervisor, departmenthead, is related specifically to the email attachment .msg, is bencoType
     timeMissedFromWork NUMERIC(8,2)
 );
+
+
