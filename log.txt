@@ -1,0 +1,216 @@
+2020-03-07 17:23:01 DEBUG root:24 - url=null
+2020-03-07 17:23:01 DEBUG root:25 - username=postgres
+2020-03-07 17:23:01 DEBUG root:26 - password=postgres
+2020-03-07 17:23:01 DEBUG root:24 - url=null
+2020-03-07 17:23:01 DEBUG root:25 - username=postgres
+2020-03-07 17:23:01 DEBUG root:26 - password=postgres
+2020-03-07 17:23:52 DEBUG root:24 - url=null
+2020-03-07 17:23:52 DEBUG root:25 - username=postgres
+2020-03-07 17:23:52 DEBUG root:26 - password=postgres
+2020-03-07 17:23:52 DEBUG root:24 - url=null
+2020-03-07 17:23:52 DEBUG root:25 - username=postgres
+2020-03-07 17:23:52 DEBUG root:26 - password=postgres
+2020-03-07 17:26:08 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:26:08 DEBUG root:26 - username=postgres
+2020-03-07 17:26:08 DEBUG root:27 - password=postgres
+2020-03-07 17:26:09 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:26:09 DEBUG root:26 - username=postgres
+2020-03-07 17:26:09 DEBUG root:27 - password=postgres
+2020-03-07 17:26:09 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:26:09 DEBUG root:26 - username=postgres
+2020-03-07 17:26:09 DEBUG root:27 - password=postgres
+2020-03-07 17:32:16 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:32:16 DEBUG root:26 - username=postgres
+2020-03-07 17:32:16 DEBUG root:27 - password=postgres
+2020-03-07 17:33:09 DEBUG root:25 - url=null
+2020-03-07 17:33:09 DEBUG root:26 - username=postgres
+2020-03-07 17:33:09 DEBUG root:27 - password=postgres
+2020-03-07 17:34:44 DEBUG root:25 - url=null
+2020-03-07 17:34:44 DEBUG root:26 - username=postgres
+2020-03-07 17:34:44 DEBUG root:27 - password=postgres
+2020-03-07 17:34:44 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 17:34:44 DEBUG root:25 - url=null
+2020-03-07 17:34:44 DEBUG root:26 - username=postgres
+2020-03-07 17:34:44 DEBUG root:27 - password=postgres
+2020-03-07 17:34:44 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 17:36:59 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:36:59 DEBUG root:26 - username=postgres
+2020-03-07 17:36:59 DEBUG root:27 - password=postgres
+2020-03-07 17:36:59 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 17:58:11 DEBUG root:24 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:58:11 DEBUG root:25 - username=postgres
+2020-03-07 17:58:11 DEBUG root:26 - password=postgres
+2020-03-07 17:58:11 DEBUG root:27 - SCHEMA=test_project1_trms
+2020-03-07 17:58:11 TRACE root:24 - getRequest()
+2020-03-07 17:58:11 DEBUG root:24 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 17:58:11 DEBUG root:25 - username=postgres
+2020-03-07 17:58:11 DEBUG root:26 - password=postgres
+2020-03-07 17:58:11 DEBUG root:27 - SCHEMA=test_project1_trms
+2020-03-07 18:02:56 DEBUG root:24 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:02:56 DEBUG root:25 - username=postgres
+2020-03-07 18:02:56 DEBUG root:26 - password=postgres
+2020-03-07 18:02:56 DEBUG root:27 - SCHEMA=test_project1_trms
+2020-03-07 18:02:56 TRACE root:24 - getRequest()
+2020-03-07 18:02:56 DEBUG root:24 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:02:56 DEBUG root:25 - username=postgres
+2020-03-07 18:02:56 DEBUG root:26 - password=postgres
+2020-03-07 18:02:56 DEBUG root:27 - SCHEMA=test_project1_trms
+2020-03-07 18:04:30 TRACE root:24 - Connection created.
+2020-03-07 18:04:30 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:04:30 DEBUG root:26 - username=postgres
+2020-03-07 18:04:30 DEBUG root:27 - password=postgres
+2020-03-07 18:04:30 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 18:04:30 TRACE root:24 - getRequest()
+2020-03-07 18:04:30 TRACE root:24 - Connection created.
+2020-03-07 18:04:30 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:04:30 DEBUG root:26 - username=postgres
+2020-03-07 18:04:30 DEBUG root:27 - password=postgres
+2020-03-07 18:04:30 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 18:05:29 TRACE root:24 - getRequest()
+2020-03-07 18:05:29 TRACE root:24 - Connection created.
+2020-03-07 18:05:29 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:05:29 DEBUG root:26 - username=postgres
+2020-03-07 18:05:29 DEBUG root:27 - password=postgres
+2020-03-07 18:05:29 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 18:08:46 TRACE root:24 - getRequest()
+2020-03-07 18:08:46 DEBUG root:34 - ps made
+2020-03-07 18:09:18 TRACE root:24 - getRequest()
+2020-03-07 18:09:18 DEBUG root:34 - ps made
+2020-03-07 18:09:54 TRACE root:24 - getRequest()
+2020-03-07 18:09:54 TRACE root:24 - Connection created.
+2020-03-07 18:09:54 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:09:54 DEBUG root:26 - username=postgres
+2020-03-07 18:09:54 DEBUG root:27 - password=postgres
+2020-03-07 18:09:54 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 18:09:54 DEBUG root:34 - ps made
+2020-03-07 18:09:54 TRACE root:24 - Connection created.
+2020-03-07 18:09:54 DEBUG root:25 - url=jdbc:postgresql://localhost:5432/postgres?
+2020-03-07 18:09:54 DEBUG root:26 - username=postgres
+2020-03-07 18:09:54 DEBUG root:27 - password=postgres
+2020-03-07 18:09:54 DEBUG root:28 - SCHEMA=test_project1_trms
+2020-03-07 18:19:54 TRACE root:24 - getRequest()
+2020-03-07 18:19:54 TRACE root:25 - Connection created.
+2020-03-07 18:19:54 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-07 18:19:54 DEBUG root:27 - USERNAME=postgres
+2020-03-07 18:19:54 DEBUG root:28 - PASSWORD=postgres
+2020-03-07 18:19:55 DEBUG root:34 - ps made
+2020-03-07 18:19:55 DEBUG root:37 - rs made
+2020-03-07 18:19:55 DEBUG root:40 - rs.next() returns true
+2020-03-07 18:21:11 TRACE root:25 - Connection created.
+2020-03-07 18:21:11 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-07 18:21:11 DEBUG root:27 - USERNAME=postgres
+2020-03-07 18:21:11 DEBUG root:28 - PASSWORD=postgres
+2020-03-07 18:21:11 TRACE root:24 - getRequest()
+2020-03-07 18:21:11 TRACE root:25 - Connection created.
+2020-03-07 18:21:11 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-07 18:21:11 DEBUG root:27 - USERNAME=postgres
+2020-03-07 18:21:11 DEBUG root:28 - PASSWORD=postgres
+2020-03-07 18:21:12 DEBUG root:34 - ps made
+2020-03-07 18:21:12 DEBUG root:37 - rs made
+2020-03-07 18:21:12 DEBUG root:40 - rs.next() returns true
+2020-03-07 18:22:50 TRACE root:24 - getRequest()
+2020-03-07 18:22:50 TRACE root:25 - Connection created.
+2020-03-07 18:22:50 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-07 18:22:50 DEBUG root:27 - USERNAME=postgres
+2020-03-07 18:22:50 DEBUG root:28 - PASSWORD=postgres
+2020-03-07 18:22:50 DEBUG root:34 - ps made
+2020-03-07 18:22:50 DEBUG root:37 - rs made
+2020-03-07 18:22:50 DEBUG root:40 - rs.next() returns true
+2020-03-08 12:43:33 TRACE root:114 - getLogin()
+2020-03-08 12:43:33 TRACE root:25 - Connection created.
+2020-03-08 12:43:33 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 12:43:33 DEBUG root:27 - USERNAME=postgres
+2020-03-08 12:43:33 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 12:43:33 DEBUG root:124 - ps made
+2020-03-08 12:43:33 DEBUG root:127 - rs made
+2020-03-08 12:43:33 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:24:48 TRACE root:62 - testValidateUserCorrectInput
+2020-03-08 13:24:48 TRACE root:64 - testValidateUserCorrectInput
+2020-03-08 13:24:48 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:24:48 TRACE root:114 - getLogin()
+2020-03-08 13:24:48 TRACE root:25 - Connection created.
+2020-03-08 13:24:48 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:24:48 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:24:48 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:24:48 DEBUG root:124 - ps made
+2020-03-08 13:24:48 DEBUG root:127 - rs made
+2020-03-08 13:24:48 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:24:48 DEBUG root:21 - true
+2020-03-08 13:24:48 DEBUG root:22 - password equalstrue
+2020-03-08 13:26:27 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:26:27 TRACE root:114 - getLogin()
+2020-03-08 13:26:27 TRACE root:25 - Connection created.
+2020-03-08 13:26:27 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:26:27 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:26:27 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:26:27 DEBUG root:124 - ps made
+2020-03-08 13:26:27 DEBUG root:127 - rs made
+2020-03-08 13:26:27 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:26:27 DEBUG root:21 - emp!=null : true
+2020-03-08 13:26:27 DEBUG root:22 - password equals : true
+2020-03-08 13:27:01 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:27:01 TRACE root:114 - getLogin()
+2020-03-08 13:27:01 TRACE root:25 - Connection created.
+2020-03-08 13:27:01 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:27:01 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:27:01 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:27:01 DEBUG root:124 - ps made
+2020-03-08 13:27:01 DEBUG root:127 - rs made
+2020-03-08 13:27:01 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:27:01 DEBUG root:21 - emp!=null : true
+2020-03-08 13:27:01 DEBUG root:22 - password equals : true
+2020-03-08 13:27:11 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:27:11 TRACE root:114 - getLogin()
+2020-03-08 13:27:11 TRACE root:25 - Connection created.
+2020-03-08 13:27:11 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:27:11 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:27:11 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:27:11 DEBUG root:124 - ps made
+2020-03-08 13:27:11 DEBUG root:127 - rs made
+2020-03-08 13:27:11 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:27:11 DEBUG root:21 - emp!=null : true
+2020-03-08 13:27:11 DEBUG root:22 - password equals : false
+2020-03-08 13:28:22 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:28:22 TRACE root:114 - getLogin()
+2020-03-08 13:28:22 TRACE root:25 - Connection created.
+2020-03-08 13:28:22 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:28:22 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:28:22 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:28:22 DEBUG root:124 - ps made
+2020-03-08 13:28:22 DEBUG root:127 - rs made
+2020-03-08 13:28:22 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:28:22 DEBUG root:21 - emp!=null : true
+2020-03-08 13:28:22 DEBUG root:22 - password equals : false
+2020-03-08 13:28:22 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:28:22 TRACE root:114 - getLogin()
+2020-03-08 13:28:22 TRACE root:25 - Connection created.
+2020-03-08 13:28:22 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:28:22 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:28:22 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:28:22 DEBUG root:124 - ps made
+2020-03-08 13:28:22 DEBUG root:127 - rs made
+2020-03-08 13:28:22 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:28:22 DEBUG root:21 - emp!=null : true
+2020-03-08 13:28:22 DEBUG root:22 - password equals : false
+2020-03-08 13:28:35 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:28:35 TRACE root:114 - getLogin()
+2020-03-08 13:28:35 TRACE root:25 - Connection created.
+2020-03-08 13:28:35 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:28:35 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:28:35 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:28:35 DEBUG root:124 - ps made
+2020-03-08 13:28:35 DEBUG root:127 - rs made
+2020-03-08 13:28:35 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:28:35 DEBUG root:21 - emp!=null : true
+2020-03-08 13:28:35 DEBUG root:22 - password equals : false
+2020-03-08 13:29:15 TRACE root:19 - authenticate(String, String)
+2020-03-08 13:29:15 TRACE root:114 - getLogin()
+2020-03-08 13:29:15 TRACE root:25 - Connection created.
+2020-03-08 13:29:15 DEBUG root:26 - URL=jdbc:postgresql://localhost:5432/test_project1_trms?
+2020-03-08 13:29:15 DEBUG root:27 - USERNAME=postgres
+2020-03-08 13:29:15 DEBUG root:28 - PASSWORD=postgres
+2020-03-08 13:29:16 DEBUG root:124 - ps made
+2020-03-08 13:29:16 DEBUG root:127 - rs made
+2020-03-08 13:29:16 DEBUG root:130 - rs.next() returns true
+2020-03-08 13:29:16 DEBUG root:21 - emp!=null : true
+2020-03-08 13:29:16 DEBUG root:22 - password equals : false

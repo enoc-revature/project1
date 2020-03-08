@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Reimbursement</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tuition Reimbursment Management System</h2>
+
+        <!-- Tab Headers -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#employeeTab">Employee Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#benCoTab">BenCo Login</a>
+            </li>
+        </ul>
+
+        <!-- Tab Bodies -->
+        <div class="tab-content">
+            <br>
+            <!-- Employee Login -->
+            <div id="employeeTab" class="container tab-pane active">
+                <p>Employee Content</p>
+            </div>
+            <!-- BenCo Login -->
+            <div id="benCoTab" class="container tab-pane fade">
+                <p>BenCo Content</p>
+                <br>
+                <!-- <form id="loginForm" method="POST"> -->
+                <form id="loginForm" method="POST" action="/TRMS/login">
+                    <input type="text" id="username">
+                    <br>
+                    <input type="text" id="password">
+                    <br>
+                    <button type="submit" id="submitLogin">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>
