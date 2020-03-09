@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Request Form</h2>
+        <p>Instructions. (*) is required</p>
+        <form id="requestFormId" method="POST" action="requestForm.html" class="container">
+            <div class="row">
+                <input class="form-control col-4" placeholder="First Name">
+                <input class="form-control col-4 offset-1" placeholder="Last Name">
+            </div>
+            <br>
+            <div class="row">
+                <input class="form-control col-4" placeholder="First Name">
+                <input class="form-control col-4 offset-1" placeholder="Last Name">
+            </div>
+            <br>
+            <div class="row">
+                <input class="form-control col-4" placeholder="First Name">
+                <input class="form-control col-4 offset-1" placeholder="Last Name">
+            </div>
+            <br>
+            <div class="row">
+                <input class="form-control col-4" placeholder="First Name">
+                <input class="form-control col-4 offset-1" placeholder="Last Name">
+            </div>
+            <br>
+            <label for="estimate">Reimbursement Estimate</label>
+            <input name="estimate" class="form-control col-4" placeholder="$100.00" readonly>
+            <button id="submitRequest" type="submit" class="btn btn-primary offset-7">Submit Request</button>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

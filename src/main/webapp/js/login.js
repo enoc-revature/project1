@@ -1,13 +1,36 @@
 window.onload = function(){
-    $("#submitLogin").on("click",login);
+    $("#bencoLoginForm").on("click",login);
+    $(".clickable-row").on("click",showRequest);
+   //this.document.getElementById("submitLogin").addEventListener("click",login);
 }
 
+class UserLogin{
+    constructor(username, password){
+        this.username = username;
+        this.password = employeePassword;
+    }
+
+}
 class Employee{
-    constructor(employeeId, employeeName){
+    constructor(employeeId, employeeName, employeePassword){
         this.employeeId = employeeId;
         this.employeeName = employeeName;
+        this.employeePassword = employeePassword;
     }
 }
+
+class Request{
+    constructor(requestId, eventName){
+        this.requestId = requestId;
+        this.eventName = eventName;
+    }
+}
+
+function showRequest(){
+    //let requestId = $(this).eq(0).value;
+    window.location = $(this).data("href");
+}
+
 
 function login(){
     console.log("login()");
@@ -24,9 +47,10 @@ function login(){
             console.log("Success");
         }
     }
-    xhr.open("POST", "/TRMS/login", true);
+    xhr.open("POST", "/project1/html/login", true);
     console.log("debug");
     xhr.send(JSON.stringify(emp)); 
+    console.log(JSON.stringify(emp));
 /*
 */
 }
