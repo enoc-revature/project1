@@ -29,10 +29,11 @@
             <div id="employeeTab" class="container tab-pane active">
                 <p>Employee Text</p>
                 <br>
-                <form id="employeeLoginForm" method="POST" action="/project1/html/login">
-                    <input type="text" id="empUsername" class="form-control col-5" placeholder="Username">
+                <!-- <form id="employeeLoginForm" method="POST" action="project1/html/login"> -->
+                <form id="employeeLoginForm" method="POST" action="/project1/login">
+                    <input type="text" id="empUsername" name="empUsername" class="form-control col-5" placeholder="Username">
                     <br>
-                    <input type="password" id="empPassword" class="form-control col-5" placeholder="Password">
+                    <input type="password" id="empPassword" name="empPassword" class="form-control col-5" placeholder="Password">
                     <br>
                     <button type="submit" id="submitEmployee" class="btn btn-primary">Login</button>
                 </form>
@@ -41,12 +42,14 @@
             <div id="benCoTab" class="container tab-pane fade">
                 <p>For BenCo and Supervisor Use ONLY</p>
                 <br>
-                <form id="bencoLoginForm" method="POST" action="/project1/html/login">
+                <!-- <form id="bencoLoginForm" method="POST" action="project1/html/login"> -->
+                <form id="bencoLoginForm" method="POST" action="/project1/login">
                     <input type="text" id="benUsername" class="form-control col-5" placeholder="Username">
                     <br>
                     <input type="password" id="benPassword" class="form-control col-5" placeholder="Password">
                     <br>
-                    <button type="submit" id="submitBenco" class="btn btn-primary">Login</button>
+                    <!-- <button type="submit" id="submitBenco" class="btn btn-primary">Login</button> -->
+                    <submit id="submitBenco" class="btn btn-primary">Login</submit>
                 </form>
             </div>
         </div>

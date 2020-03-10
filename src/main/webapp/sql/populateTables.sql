@@ -27,6 +27,91 @@ VALUES  ('TB3059','Tylor','Biggins','tylor.biggins@trms.benco.com','JRw0e9', 'Be
         ('RF3954','Rebecca','Ford','tylor.biggins@trms.benco.com',NULL, 'DepartmentHead')
 ; -- bencoType VARCHAR -- BenCo, Supervisor, DeptHead.
 
+CREATE TABLE request;
+INSERT INTO request(    requestId,
+                        employeeId,
+                        reimburseType,
+                        eventDate,
+                        eventTime,
+                        eventAddress,
+                        eventDescription,
+                        eventCost,
+                        justification,
+                        attachments,
+                        attachmentsOfApproval,
+                        timeMissedFromWork,
+                        bencoId,
+                        supervisorId,
+                        deptHeadId,
+                        denialReason,
+                        pending,
+                        grade,
+                        gradeCutoff,
+                        gradeFormat,
+                        passed,
+                        urgent,
+                        preApproved,
+                        preApprovalEmail,
+	                    approved,
+                        awarded,
+                        canceled,
+                        escalation,
+                        elevatedAward,
+                        elevatedReason,
+                        elevated,
+                        presentation,
+                        presentationUpload,
+                        projectedApproval,
+                        approvalType
+                    )
+VALUES  (1,'J123','CollegeCourse','2008-31-01','12:00:00','123 Ave.','Finance 101',100.00,'Is relevent to cashier job',null,null,null,
+         1,2,3,null,null,null,'C','StandardGrading',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+        (2,'J123','CollegeCourse','2009-31-01','12:00:00','123 Ave.','Sports Health',80.00, 'Is relevent to bussing',null,null,null,
+         1,2,3,null,null,null,'C','StandardGrading',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+
+;
+    -- requestId INTEGER PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
+
+    -- -- Required in Form
+    -- employeeId VARCHAR NOT NULL, --fk, for employee info
+    -- reimburseType VARCHAR NOT NULL, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
+    -- eventDate DATE NOT NULL, -- start of event (date)
+    -- eventTime TIME NOT NULL, -- when submitted (datetime)
+    -- eventAddress VARCHAR NOT NULL,
+    -- eventDescription TEXT NOT NULL, -- Could include when the course will be taking place
+    -- eventCost NUMERIC(7,2) NOT NULL,
+    -- gradeFormat CHAR(1) NOT NULL, --of specific event
+    -- justification TEXT NOT NULL,
+
+    -- -- Optional in Form
+    -- attachments VARCHAR, --file location: pdf,png,txt,or doc
+    -- attachmentsOfApproval VARCHAR, --file location:  .msg file
+    -- timeMissedFromWork NUMERIC(8,2),
+
+    -- -- Variables
+    -- bencoId VARCHAR, --fk
+    -- deptHeadId VARCHAR, --fk
+    -- denialReason TEXT,
+    -- pending BOOLEAN,
+    -- grade CHAR(1),
+    -- gradeCutoff CHAR(1), --Has default
+    -- gradeFormat VARCHAR,
+    -- passed BOOLEAN,
+    -- urgent BOOLEAN, --less than 2 weeks left to approve reimbursement
+    -- preApproved BOOLEAN,
+    -- preApprovalEmail VARCHAR,
+	-- approved BOOLEAN, --leave as null, false = request denied. null=not decided.
+    -- awarded BOOLEAN,
+    -- canceled BOOLEAN,
+    -- escalation BOOLEAN, --Needs trigger
+    -- elevatedAward BOOLEAN, --exceeds maxAmount
+    -- elevatedReason BOOLEAN, --exceeds maxAmount
+    -- elevated BOOLEAN, --exceeds maxAmount
+    -- presentation BOOLEAN,
+    -- presentationUpload VARCHAR, --file location
+    -- projectedApproval NUMERIC(7,2),  --displayed as read-only field along with confirmation number (requestId pk)
+    -- approvalType VARCHAR -- supervisor, departmenthead, is related specifically to the email attachment .msg, is bencoType
+);
 
 
 -- Junction Table
@@ -44,6 +129,7 @@ VALUES  (2948302,'UniversityCourse'),
 ;
 
 --Enumeration Table
+TRUNCATE TABLE reimburse_enum;
 INSERT INTO reimburse_enum( reimburseType,
                             reimbursePercentage
             )
@@ -56,32 +142,12 @@ VALUES  ('UniversityCourse', 0.8),
 ;
 
 
-CREATE TABLE reimburse_enum( -- //TODO: insert values
-    reimburseType VARCHAR NOT NULL, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
-    reimbursePercentage NUMERIC(3,2) NOT NULL
-        CONSTRAINT reimburse_perc_bounds CHECK(reimbursePercentage BETWEEN 0.00 AND 1.00),
-    FOREIGN KEY(requestId) REFERENCES request(requestId)
-)
-
-
+--Enumeration Table
 TRUNCATE TABLE grade_format;
-CREATE TABLE grade_format(
-    requestId INTEGER,
-    standardGradeFarmat INTEGER,
-    gradeFormat CHAR(2) NOT NULL, --of specific event, can be A,..,F or A+,A,---,D,D-,F. Also P/F for pass/fail
-    FOREIGN KEY(requestId) REFERENCES request(requestId)
-);
-
-
-INSERT INTO grade_format(
-
-);
-
-
-
-TRUNCATE TABLE benco_type;
-CREATE TABLE benco_type(
-    bencoId VARCHAR,
-    bencoType VARCHAR,
-    FOREIGN KEY(bencoId) REFERENCES benco(bencoId)
-);
+INSERT INTO grade_format(   standardGrading,
+                            request
+            )
+--StandardGrading, FinerGrading, PassFail
+VALUES  ('standardGrading',1),
+        ('PassFail',2)
+;

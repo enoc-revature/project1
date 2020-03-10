@@ -1,10 +1,12 @@
+/*
 window.onload = function(){
     $("#bencoLoginForm").on("click",login);
     $(".clickable-row").on("click",showRequest);
    //this.document.getElementById("submitLogin").addEventListener("click",login);
 }
+*/
 
-class UserLogin{
+/* class UserLogin{
     constructor(username, password){
         this.username = username;
         this.password = employeePassword;
@@ -24,15 +26,15 @@ class Request{
         this.requestId = requestId;
         this.eventName = eventName;
     }
-}
+} */
 
-function showRequest(){
+/* function showRequest(){
     //let requestId = $(this).eq(0).value;
     window.location = $(this).data("href");
-}
+} */
 
 
-function login(){
+/* function login(){
     console.log("login()");
     event.preventDefault();
     event.stopPropagation();
@@ -51,9 +53,7 @@ function login(){
     console.log("debug");
     xhr.send(JSON.stringify(emp)); 
     console.log(JSON.stringify(emp));
-/*
-*/
-}
+} */
 
 /*
 function temp() {

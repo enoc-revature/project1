@@ -18,21 +18,37 @@ public class LoginServlet extends HttpServlet{
 		
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		log.debug("ValidateUser()");
-		String username = req.getParameter("username");
-		String password = req.getParameter("password");
-		log.debug("Username: " + username + " Password: " + password);
-		Employee emp = serv.authenticate(username, password);
-		System.out.println("Empolyee: " + emp);
-		if (emp == null) {
-			log.debug("emp is null");
-			resp.setStatus(resp.SC_UNAUTHORIZED);
+		System.out.println("Something");
+		String empUsername = req.getParameter("empUsername");
+		String empPassword = req.getParameter("empPassword");
+		String benUsername = req.getParameter("benUsername");
+		String benPassword = req.getParameter("benPassword");
+		log.debug("Username: " + empUsername + " Password: " + empPassword);
+		log.debug("Username: " + benUsername + " Password: " + benPassword);
+		if(!benPassword.contentEquals("")) {
+			Employee emp = serv.authenticate(empUsername, empPassword);
+			System.out.println("Empolyee: " + emp);
+			if (emp == null) {
+				log.debug("emp is null");
+				resp.setStatus(resp.SC_UNAUTHORIZED);
+			} else {
+				log.debug("emp is not null");
+				HttpSession sess = req.getSession(true);
+				sess.setAttribute("employee", emp);
+				resp.sendRedirect("employeeMenu.html");
+			}
 		} else {
-			log.debug("emp is not null");
-			HttpSession sess = req.getSession(true);
-			sess.setAttribute("employee", emp);
-			resp.sendRedirect("bencoMenu");
+			Employee emp = serv.authenticate(benUsername, benPassword);
+			System.out.println("Empolyee: " + emp);
+			if (emp == null) {
+				log.debug("emp is null");
+				resp.setStatus(resp.SC_UNAUTHORIZED);
+			} else {
+				log.debug("emp is not null");
+				HttpSession sess = req.getSession(true);
+				sess.setAttribute("employee", emp);
+				resp.sendRedirect("bencoMenu");
+			}
 		}
 	}
-
-	
 }
