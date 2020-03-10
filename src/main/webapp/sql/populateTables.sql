@@ -2,74 +2,91 @@ TRUNCATE TABLE employee;
 INSERT INTO employee (  employeeId,
                         employeeFirstName,
                         employeeLastName,
+                        employeePassword,
                         employeeEmail,
                         availableAmount,
                         maxAmount,
                         pendingAmount,
                         awardedAmount
             )
-VALUES  ('JS1324','John','Smith','john.smith@gmail.com',1000.00,1000.00,0.00,0.00),
-        ('SS1324','Susanne','Smith','susanne.smith@gmail.com',1000.00,1000.00,0.00,0.00)
+VALUES  ('JS1324','John','Smith','password','john.smith@gmail.com',1000.00,1000.00,0.00,0.00),
+        ('SS1324','Susanne','Smith','pa$$word','susanne.smith@gmail.com',1000.00,1000.00,0.00,0.00)
 ;
-
+select * from employee;
 
 
 TRUNCATE TABLE benco;
 INSERT INTO benco ( bencoId,
                     bencoFirstName,
                     bencoLastName,
-                    bencoEmail,
-                    reportsTo,
-                    bencoType 
+                    bencoPassword,
+                    bencoEmail
             )
-VALUES  ('TB3059','Tylor','Biggins','tylor.biggins@trms.benco.com','JRw0e9', 'Benco'),
-        ('JRw0e9','Jeniffer','Robinson','tylor.biggins@trms.benco.com','RF3954', 'Supervisor'),
-        ('RF3954','Rebecca','Ford','tylor.biggins@trms.benco.com',NULL, 'DepartmentHead')
-; -- bencoType VARCHAR -- BenCo, Supervisor, DeptHead.
+VALUES  ('TB3059','Tylor','Biggins','p123','tylor.biggins@trms.benco.com'),
+        ('JRw0e9','Jeniffer','Robinson','p123','tylor.biggins@trms.benco.com'),
+        ('RF3954','Rebecca','Ford','p123','tylor.biggins@trms.benco.com')
+;
 
-CREATE TABLE request;
+select * from request;
+TRUNCATE TABLE request;
 INSERT INTO request(    requestId,
                         employeeId,
                         reimburseType,
                         eventDate,
                         eventTime,
+
                         eventAddress,
                         eventDescription,
                         eventCost,
                         justification,
                         attachments,
+
                         attachmentsOfApproval,
                         timeMissedFromWork,
                         bencoId,
                         supervisorId,
                         deptHeadId,
+
                         denialReason,
                         pending,
                         grade,
                         gradeCutoff,
                         gradeFormat,
+
                         passed,
                         urgent,
                         preApproved,
                         preApprovalEmail,
 	                    approved,
+
                         awarded,
                         canceled,
                         escalation,
                         elevatedAward,
                         elevatedReason,
+
                         elevated,
                         presentation,
                         presentationUpload,
                         projectedApproval,
                         approvalType
                     )
-VALUES  (1,'J123','CollegeCourse','2008-31-01','12:00:00','123 Ave.','Finance 101',100.00,'Is relevent to cashier job',null,null,null,
-         1,2,3,null,null,null,'C','StandardGrading',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-        (2,'J123','CollegeCourse','2009-31-01','12:00:00','123 Ave.','Sports Health',80.00, 'Is relevent to bussing',null,null,null,
-         1,2,3,null,null,null,'C','StandardGrading',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-
+VALUES  (1,'JS1324','CollegeCourse','2008-01-15','12:00:00',
+         '123 Ave.','Finance 101',100.00,'Is relevent to cashier job',null,
+         null,null,1,2,3,
+         null,null,null,null,'S',--'StandardGrading',
+         null,null,null,null,null,
+         null,null,null,null,null,
+         null,null,null,null,null),
+        (2,'JS1324','CollegeCourse','2009-01-16','12:00:00',
+         '123 Ave.','Sports Health',80.00, 'Is relevent to bussing',null,
+         null,null,1,2,3,
+         null,null,null,null,'S',--'StandardGrading',
+         null,null,null,null,null,
+         null,null,null,null,null,
+         null,null,null,null,null)
 ;
+select * from request;
     -- requestId INTEGER PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
 
     -- -- Required in Form
@@ -115,18 +132,18 @@ VALUES  (1,'J123','CollegeCourse','2008-31-01','12:00:00','123 Ave.','Finance 10
 
 
 -- Junction Table
-TRUNCATE TABLE reimburse_type_table
+TRUNCATE TABLE reimburse_type_table;
 INSERT INTO reimburse_type_table(   requestId,
-                                    reimburseType,
-                                    reimbursePercentage
+                                    reimburseType
             )
 VALUES  (2948302,'UniversityCourse'),
         (2948302,'Seminar'),
-        (2948302,'CertificationClass'5),
+        (2948302,'CertificationClass'),
         (2948302,'Certification'),
         (2948302,'TechnicalTraining'),
         (2948302,'Other')
 ;
+select * from reimburse_type_table;
 
 --Enumeration Table
 TRUNCATE TABLE reimburse_enum;
@@ -145,9 +162,8 @@ VALUES  ('UniversityCourse', 0.8),
 --Enumeration Table
 TRUNCATE TABLE grade_format;
 INSERT INTO grade_format(   standardGrading,
-                            request
+                            requestId
             )
---StandardGrading, FinerGrading, PassFail
 VALUES  ('standardGrading',1),
         ('PassFail',2)
-;
+; --StandardGrading, FinerGrading, PassFail

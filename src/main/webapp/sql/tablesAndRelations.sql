@@ -17,13 +17,13 @@ CREATE TABLE benco(
     bencoId VARCHAR PRIMARY KEY,
     bencoFirstName VARCHAR NOT NULL,
     bencoLastName VARCHAR NOT NULL,
-    bencoEmail VARCHAR NOT NULL,
-    bencoType VARCHAR NOT NULL,
-    bencoPassword VARCHAR NOT NULL 
+    bencoPassword VARCHAR NOT NULL,
+    bencoEmail VARCHAR NOT NULL
 );
 
 
 DROP TABLE IF EXISTS request;
+DELETE FROM request;
 CREATE TABLE request(
     requestId INTEGER PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
 
@@ -35,7 +35,7 @@ CREATE TABLE request(
     eventAddress VARCHAR NOT NULL,
     eventDescription TEXT NOT NULL, -- Could include when the course will be taking place
     eventCost NUMERIC(7,2) NOT NULL,
-    gradeFormat CHAR(1) NOT NULL, --of specific event
+    gradeFormat VARCHAR NOT NULL, --of specific event
     justification TEXT NOT NULL,
 
     -- Optional in Form
@@ -51,7 +51,6 @@ CREATE TABLE request(
     pending BOOLEAN,
     grade CHAR(1),
     gradeCutoff CHAR(1), --Has default
-    gradeFormat VARCHAR,
     passed BOOLEAN,
     urgent BOOLEAN, --less than 2 weeks left to approve reimbursement
     preApproved BOOLEAN,
@@ -70,28 +69,30 @@ CREATE TABLE request(
 );
 
 -- Junction Table
-DROP TABLE IF EXISTS reimburse_type_table
+DROP TABLE IF EXISTS reimburse_type_table;
 CREATE TABLE reimburse_type_table(
     requestId INTEGER,
     reimburseType VARCHAR,
-    FOREIGN KEY requestId REFERENCES request(requestId) DELETE ON CASCADE,
-    FOREIGN KEY reimburseType REFERENCES reimburse_enum(reimburseType) DELETE ON CASCADE,
+    FOREIGN KEY(requestId) REFERENCES request(requestId), -- DELETE ON CASCADE,
+    FOREIGN KEY(reimburseType) REFERENCES reimburse_enum(reimburseType), -- DELETE ON CASCADE,
     PRIMARY KEY (requestId, reimburseType)
 );
 
 --Enumeration Table
+DROP TABLE IF EXISTS reimburse_enum;
 CREATE TABLE reimburse_enum(
-    reimburseType VARCHAR NOT NULL, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
+    reimburseType VARCHAR PRIMARY KEY, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
     reimbursePercentage NUMERIC(3,2) NOT NULL
-        CONSTRAINT reimburse_perc_bounds CHECK(reimbursePercentage BETWEEN 0.00 AND 1.00),
-    FOREIGN KEY(requestId) REFERENCES request(requestId)
+        CONSTRAINT reimburse_perc_bounds CHECK(reimbursePercentage BETWEEN 0.00 AND 1.00)
+    --FOREIGN KEY(requestId) REFERENCES request(requestId)
 );
 
 --Enumeration Table
+DROP TABLE IF EXISTS grade_format;
 CREATE TABLE grade_format(
     standardGrading VARCHAR PRIMARY KEY,
-    requestId INTEGER,
-    FOREIGN KEY(requestId) REFERENCES request(requestId)
+    requestId INTEGER
+    --FOREIGN KEY(requestId) REFERENCES request(requestId)
 );
 
 --Enumeration Table
