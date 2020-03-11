@@ -51,14 +51,21 @@ function displayRequestList(reqList){
         let reimburseTypeElem = document.createElement("td");
         let eventDateElem = document.createElement("td");
         let pendingElem = document.createElement("td");
+        let addElem = document.createElement("td");
         requestIdElem.innerHTML = req.requestId;
+        requestIdElem.hidden = true;
         reimburseTypeElem.innerHTML = req.reimburseType;
+        reimburseTypeElem.setAttribute("class", "clickable-row")
         eventDateElem.innerHTML = req.eventDate;
+        eventDateElem.setAttribute("class", "clickable-row")
         pendingElem.innerHTML = req.pending;
+        pendingElem.setAttribute("class", "clickable-row")
+        addElem.innerHTML = "+"
+        addElem.setAttribute("class", "clickable-row")
         rowElem.appendChild(requestIdElem);
         rowElem.appendChild(reimburseTypeElem);
         rowElem.appendChild(eventDateElem);
         rowElem.appendChild(pendingElem);
-        document.getElementById("requestBodyTable").appendChild(rowElem);
+        document.getElementById("requestTableBody").appendChild(rowElem);
     }
 }
