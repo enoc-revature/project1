@@ -20,7 +20,9 @@ public class ValidateUser implements AuthenticateLoginService {
 		emp = dao.getLogin(username);
 		log.debug("emp!=null : " + (emp != null));
 		log.debug("password equals : " + emp.getPassword().equals(password));
+		//log.debug("emp != null && emp.getPassword().equals(password)" + (emp != null && emp.getPassword().equals(password)));
 		if (emp != null && emp.getPassword().equals(password)) {
+			//log.debug("debug");
 			return emp;
 		}
 		return null;

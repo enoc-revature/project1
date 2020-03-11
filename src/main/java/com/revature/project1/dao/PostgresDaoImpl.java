@@ -39,7 +39,7 @@ public class PostgresDaoImpl implements PostgresDao {
 			if(rs.next()) {
 				log.debug("rs.next() returns true");
 				req.setRequestId(rs.getInt("requestId"));
-				req.setEventName(rs.getString("eventName"));
+				req.setReimburseType(rs.getString("reimburseType"));
 				reqList.add(req);
 			} else {
 				log.debug("rs.next() returned empty");
@@ -106,7 +106,27 @@ public class PostgresDaoImpl implements PostgresDao {
 
 	@Override
 	public List<Request> getRequests(Employee emp) {
-		return null;
+		log.trace("getRequests(Employee)");
+		List<Request> reqList = new ArrayList<Request>();
+		Request req = null;
+
+		try (Connection conn = ConnectionFactory.getConnection()) {
+			String query = "SELECT * FROM employee_menu(?)";
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1,emp.getEmployeeId());
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				req = new Request();
+				req.setRequestId(rs.getInt("requestId"));
+				req.setReimburseType(rs.getString("reimburseType"));
+				req.setEventDate(rs.getString("eventDate"));
+				req.setPending(rs.getBoolean("pending"));
+				reqList.add(req);
+			}
+		} catch (SQLException err) {
+			err.printStackTrace();
+		}
+		return reqList;
 	}
 	
 	@Override
@@ -128,8 +148,9 @@ public class PostgresDaoImpl implements PostgresDao {
 
 			if(rs.next()) {
 				log.debug("rs.next() returns true");
-				emp.setUserId(rs.getString("employeeId"));
-				emp.setName(rs.getString("employeeName"));
+				emp.setEmployeeId(rs.getString("employeeId"));
+				emp.setFirstName(rs.getString("employeeFirstName"));
+				emp.setLastName(rs.getString("employeeLastName"));
 				emp.setPassword(rs.getString("employeePassword"));
 			} else {
 				log.debug("rs.next() returned empty");

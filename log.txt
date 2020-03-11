@@ -214,3 +214,14 @@
 2020-03-08 13:29:16 DEBUG root:130 - rs.next() returns true
 2020-03-08 13:29:16 DEBUG root:21 - emp!=null : true
 2020-03-08 13:29:16 DEBUG root:22 - password equals : false
+2020-03-11 07:44:37 TRACE root:109 - getRequests(Employee)
+2020-03-11 07:44:37 TRACE root:26 - Connection created.
+2020-03-11 07:44:37 DEBUG root:27 - URL=jdbc:postgresql://localhost:5432/demo_project1_trms?
+2020-03-11 07:44:37 DEBUG root:28 - USERNAME=postgres
+2020-03-11 07:44:37 DEBUG root:29 - PASSWORD=postgres
+2020-03-11 07:46:01 TRACE root:109 - getRequests(Employee)
+2020-03-11 07:46:01 TRACE root:26 - Connection created.
+2020-03-11 07:46:01 DEBUG root:27 - URL=jdbc:postgresql://localhost:5432/demo_project1_trms?
+2020-03-11 07:46:01 DEBUG root:28 - USERNAME=postgres
+2020-03-11 07:46:01 DEBUG root:29 - PASSWORD=postgres
+2020-03-11 07:46:01 DEBUG root:129 - debug

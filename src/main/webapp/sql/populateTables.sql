@@ -26,8 +26,8 @@ VALUES  ('TB3059','Tylor','Biggins','p123','tylor.biggins@trms.benco.com'),
         ('JRw0e9','Jeniffer','Robinson','p123','tylor.biggins@trms.benco.com'),
         ('RF3954','Rebecca','Ford','p123','tylor.biggins@trms.benco.com')
 ;
-
 select * from request;
+
 TRUNCATE TABLE request;
 INSERT INTO request(    requestId,
                         employeeId,
@@ -74,61 +74,19 @@ INSERT INTO request(    requestId,
 VALUES  (1,'JS1324','CollegeCourse','2008-01-15','12:00:00',
          '123 Ave.','Finance 101',100.00,'Is relevent to cashier job',null,
          null,null,1,2,3,
-         null,null,null,null,'S',--'StandardGrading',
+         null,null,null,null,'StandardGrading',
          null,null,null,null,null,
          null,null,null,null,null,
          null,null,null,null,null),
         (2,'JS1324','CollegeCourse','2009-01-16','12:00:00',
          '123 Ave.','Sports Health',80.00, 'Is relevent to bussing',null,
          null,null,1,2,3,
-         null,null,null,null,'S',--'StandardGrading',
+         null,null,null,null,'StandardGrading',
          null,null,null,null,null,
          null,null,null,null,null,
          null,null,null,null,null)
 ;
 select * from request;
-    -- requestId INTEGER PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
-
-    -- -- Required in Form
-    -- employeeId VARCHAR NOT NULL, --fk, for employee info
-    -- reimburseType VARCHAR NOT NULL, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
-    -- eventDate DATE NOT NULL, -- start of event (date)
-    -- eventTime TIME NOT NULL, -- when submitted (datetime)
-    -- eventAddress VARCHAR NOT NULL,
-    -- eventDescription TEXT NOT NULL, -- Could include when the course will be taking place
-    -- eventCost NUMERIC(7,2) NOT NULL,
-    -- gradeFormat CHAR(1) NOT NULL, --of specific event
-    -- justification TEXT NOT NULL,
-
-    -- -- Optional in Form
-    -- attachments VARCHAR, --file location: pdf,png,txt,or doc
-    -- attachmentsOfApproval VARCHAR, --file location:  .msg file
-    -- timeMissedFromWork NUMERIC(8,2),
-
-    -- -- Variables
-    -- bencoId VARCHAR, --fk
-    -- deptHeadId VARCHAR, --fk
-    -- denialReason TEXT,
-    -- pending BOOLEAN,
-    -- grade CHAR(1),
-    -- gradeCutoff CHAR(1), --Has default
-    -- gradeFormat VARCHAR,
-    -- passed BOOLEAN,
-    -- urgent BOOLEAN, --less than 2 weeks left to approve reimbursement
-    -- preApproved BOOLEAN,
-    -- preApprovalEmail VARCHAR,
-	-- approved BOOLEAN, --leave as null, false = request denied. null=not decided.
-    -- awarded BOOLEAN,
-    -- canceled BOOLEAN,
-    -- escalation BOOLEAN, --Needs trigger
-    -- elevatedAward BOOLEAN, --exceeds maxAmount
-    -- elevatedReason BOOLEAN, --exceeds maxAmount
-    -- elevated BOOLEAN, --exceeds maxAmount
-    -- presentation BOOLEAN,
-    -- presentationUpload VARCHAR, --file location
-    -- projectedApproval NUMERIC(7,2),  --displayed as read-only field along with confirmation number (requestId pk)
-    -- approvalType VARCHAR -- supervisor, departmenthead, is related specifically to the email attachment .msg, is bencoType
-);
 
 
 -- Junction Table
@@ -143,7 +101,7 @@ VALUES  (2948302,'UniversityCourse'),
         (2948302,'TechnicalTraining'),
         (2948302,'Other')
 ;
-select * from reimburse_type_table;
+SELECT * FROM reimburse_type_table;
 
 --Enumeration Table
 TRUNCATE TABLE reimburse_enum;
@@ -157,6 +115,7 @@ VALUES  ('UniversityCourse', 0.8),
         ('TechnicalTraining', 0.9),
         ('Other', 0.3)
 ;
+SELECT * FROM reimburse_enum;
 
 
 --Enumeration Table
@@ -164,6 +123,7 @@ TRUNCATE TABLE grade_format;
 INSERT INTO grade_format(   standardGrading,
                             requestId
             )
-VALUES  ('standardGrading',1),
+VALUES  ('StandardGrading',1),
         ('PassFail',2)
 ; --StandardGrading, FinerGrading, PassFail
+SELECT * FROM grade_format;

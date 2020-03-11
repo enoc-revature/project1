@@ -23,7 +23,6 @@ CREATE TABLE benco(
 
 
 DROP TABLE IF EXISTS request;
-DELETE FROM request;
 CREATE TABLE request(
     requestId INTEGER PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
 
@@ -40,7 +39,7 @@ CREATE TABLE request(
 
     -- Optional in Form
     attachments VARCHAR, --file location: pdf,png,txt,or doc
-    attachmentsOfApproval VARCHAR, --file location:  .msg file
+    attachmentsOfApproval VARCHAR, --file location: .msg file
     timeMissedFromWork NUMERIC(8,2),
 
     -- Variables
@@ -84,15 +83,14 @@ CREATE TABLE reimburse_enum(
     reimburseType VARCHAR PRIMARY KEY, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
     reimbursePercentage NUMERIC(3,2) NOT NULL
         CONSTRAINT reimburse_perc_bounds CHECK(reimbursePercentage BETWEEN 0.00 AND 1.00)
-    --FOREIGN KEY(requestId) REFERENCES request(requestId)
 );
 
 --Enumeration Table
 DROP TABLE IF EXISTS grade_format;
 CREATE TABLE grade_format(
     standardGrading VARCHAR PRIMARY KEY,
-    requestId INTEGER
-    --FOREIGN KEY(requestId) REFERENCES request(requestId)
+    requestId INTEGER,
+    FOREIGN KEY(requestId) REFERENCES request(requestId)
 );
 
 --Enumeration Table

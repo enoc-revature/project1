@@ -39,14 +39,14 @@ public class TestService {
 		reqList.clear();
 		empList.clear();
 
-		emp.setUserId("J123");
-		emp.setName("Jim");
+		emp.setEmployeeId("J123");
+		emp.setFirstName("Jim");
 		emp.setPassword("password");
-		emp2.setUserId("J123");
-		emp2.setName("Jim");
+		emp2.setEmployeeId("J123");
+		emp2.setFirstName("Jim");
 		emp2.setPassword("password");
 		req.setRequestId(1);
-		req.setEventName("College");
+		req.setReimburseType("College");
 		
 		empList.add(emp);
 		reqList.add(req);
@@ -59,21 +59,21 @@ public class TestService {
 	@Test
 	public void testValidateUserCorrectInput() {
 		AuthenticateLoginService val = new ValidateUser();
-		assertTrue(emp.equals(val.authenticate(emp.getUserId(), emp.getPassword())));
+		assertTrue(emp.equals(val.authenticate(emp.getEmployeeId(), emp.getPassword())));
 	}
 
 	@Test
 	public void testValidateUserIncorrectInput() {
 		AuthenticateLoginService val = new ValidateUser();
 		emp2.setPassword("notPassword");
-		assertFalse(emp.equals(val.authenticate(emp.getUserId(), emp2.getPassword())));
+		assertFalse(emp.equals(val.authenticate(emp.getEmployeeId(), emp2.getPassword())));
 	}
 
 	@Test
 	public void testValidateUserIncorrectInputNull() {
 		AuthenticateLoginService val = new ValidateUser();
 		emp2.setPassword("notPassword");
-		assertNull(val.authenticate(emp.getUserId(), emp2.getPassword()));
+		assertNull(val.authenticate(emp.getEmployeeId(), emp2.getPassword()));
 	}
 
 }

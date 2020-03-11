@@ -10,7 +10,8 @@ public class ConnectionFactory {
 	public static Logger log = Logger.getRootLogger();
 	private final String USERNAME = System.getenv("2002_POSTGRES_USERNAME");
 	private final String PASSWORD = System.getenv("2002_POSTGRES_PASSWORD");
-	private final String DATABASE = "test_project1_trms";
+	//private final String DATABASE = "test_project1_trms";
+	private final String DATABASE = "demo_project1_trms";
 	private String URL = System.getenv("LOCALHOST_POSTGRES_FULL") + DATABASE + "?";
 	//private final String SCHEMA = "test_project1_trms";
 	private static ConnectionFactory connectionFactory;

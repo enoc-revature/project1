@@ -13,7 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.revature.project1.pojo.*;
-import com.revature.project1.servlet.*;
+//import com.revature.project1.servlet.*;
 
 public class TestServlet {
 	public static Logger log = Logger.getRootLogger();
@@ -39,14 +39,14 @@ public class TestServlet {
 		reqList.clear();
 		empList.clear();
 
-		emp.setUserId("J123");
-		emp.setName("Jim");
+		emp.setEmployeeId("J123");
+		emp.setFirstName("Jim");
 		emp.setPassword("password");
-		emp2.setUserId("J123");
-		emp2.setName("Jim");
+		emp2.setEmployeeId("J123");
+		emp2.setFirstName("Jim");
 		emp2.setPassword("password");
 		req.setRequestId(1);
-		req.setEventName("College");
+		req.setReimburseType("College");
 		
 		empList.add(emp);
 		reqList.add(req);

@@ -40,18 +40,19 @@ public class TestPostgresDao {
 	@Before
 	public void setUp() throws Exception {
 		emp = new Employee();
+		emp2 = new Employee();
 		req = new Request();
 		reqList.clear();
 		empList.clear();
 
-		emp.setUserId("J123");
-		emp.setName("Jim");
+		emp.setEmployeeId("JS1324");
+		emp.setFirstName("Jim");
 		emp.setPassword("password");
-		emp2.setUserId("J123");
-		emp2.setName("Jim");
+		emp2.setEmployeeId("JS1324");
+		emp2.setFirstName("Jim");
 		emp2.setPassword("password");
 		req.setRequestId(1);
-		req.setEventName("College");
+		req.setReimburseType("CollegeCourse");
 		
 		empList.add(emp);
 		reqList.add(req);
@@ -77,8 +78,13 @@ public class TestPostgresDao {
 	
 	@Test
 	public void testGetLogin() {
-		assertTrue(emp.equals(dao.getLogin("J123")));
+		assertTrue(emp.equals(dao.getLogin("JS1324")));
 	}
 	
+	@Test
+	public void testGetRequestsEmployees() {
+		List<Request> reqList = dao.getRequests(emp);
+		assertEquals(2, reqList.size());
+	}
 	//TODO: Do all DAO Tests
 }

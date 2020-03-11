@@ -47,13 +47,12 @@ public class EmployeeLoginServlet2 extends HttpServlet {
 	private static AuthenticateLoginService serv = new ValidateUser();
 		
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log.debug("ValidateUser()");
-		System.out.println("Something");
+		log.debug("EmployeeLoginServlet2 -> doPost");
 		String empUsername = req.getParameter("empUsername");
 		String empPassword = req.getParameter("empPassword");
 		log.debug("Username: " + empUsername + " Password: " + empPassword);
+		log.debug("debug");
 		Employee emp = serv.authenticate(empUsername, empPassword);
-		System.out.println("Empolyee: " + emp);
 		if (emp == null) {
 			log.debug("emp is null");
 			resp.setStatus(resp.SC_UNAUTHORIZED);
@@ -61,6 +60,8 @@ public class EmployeeLoginServlet2 extends HttpServlet {
 			log.debug("emp is not null");
 			HttpSession sess = req.getSession(true);
 			sess.setAttribute("employee", emp);
+			//resp.sendRedirect("MenuPage");
+			//resp.sendRedirect("/html/employeeMenu.html");
 			resp.sendRedirect("html/employeeMenu.html");
 		}
 	}
