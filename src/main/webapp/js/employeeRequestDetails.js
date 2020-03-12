@@ -2,6 +2,8 @@ window.onload = function(){
     this.getRequestDetails();
 }
 
+//localstorage.setAttribute(req.requestId);
+
 function getRequestDetails(){
     console.log("getRequestDetails()");
     let xhr = new XMLHttpRequest();

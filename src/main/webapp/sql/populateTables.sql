@@ -29,7 +29,7 @@ VALUES  ('TB3059','Tylor','Biggins','p123','tylor.biggins@trms.benco.com'),
 select * from request;
 
 TRUNCATE TABLE request;
-INSERT INTO request(    requestId,
+INSERT INTO request(    --requestId,
                         employeeId,
                         reimburseType,
                         eventDate,
@@ -71,14 +71,14 @@ INSERT INTO request(    requestId,
                         projectedApproval,
                         approvalType
                     )
-VALUES  (1,'JS1324','CollegeCourse','2008-01-15','12:00:00',
+VALUES  ('JS1324','CollegeCourse','2008-01-15','12:00:00',
          '123 Ave.','Finance 101',100.00,'Is relevent to cashier job',null,
          null,null,1,2,3,
          null,null,null,null,'StandardGrading',
          null,null,null,null,null,
          null,null,null,null,null,
          null,null,null,null,null),
-        (2,'JS1324','CollegeCourse','2009-01-16','12:00:00',
+        ('JS1324','CollegeCourse','2009-01-16','12:00:00',
          '123 Ave.','Sports Health',80.00, 'Is relevent to bussing',null,
          null,null,1,2,3,
          null,null,null,null,'StandardGrading',

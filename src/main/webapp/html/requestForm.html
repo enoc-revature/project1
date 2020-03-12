@@ -23,46 +23,47 @@
         <form id="requestFormId" method="POST" action="requestForm.html" class="container needs-validation">
             <h4>Required</h4>
             <div class="row">
-                <input class="form-control col-4" placeholder="First Name" required> <!--Auto-fill-->
-                <input class="form-control col-4 offset-1" placeholder="Last Name" required> <!--Auto-fill-->
+                <input id="firstName" class="form-control col-4" placeholder="First Name" required> <!--Auto-fill-->
+                <input id="lastName" class="form-control col-4 offset-1" placeholder="Last Name" required> <!--Auto-fill-->
             </div>
             <br>
             <div class="row">
-                <input class="form-control col-4" placeholder="Date">
-                <input class="form-control col-4 offset-1" placeholder="Time">
+                <input id="date" class="form-control col-4" placeholder="Date">
+                <input id="time" class="form-control col-4 offset-1" placeholder="Time">
             </div>
             <br>
             <div class="row">
-                <input class="form-control col-4" placeholder="Description">
-                <input class="form-control col-4 offset-1" placeholder="Cost">
+                <input id="description" class="form-control col-4" placeholder="Description">
+                <input id="eventCost" class="form-control col-4 offset-1" placeholder="Cost">
             </div>
             <br>
             <div class="row">
-                <input class="form-control col-4" placeholder="Grading Format">
-                <input class="form-control col-4 offset-1" placeholder="Type of Reimbursement">
+                <input id="gradeFormat" class="form-control col-4" placeholder="Grading Format">
+                <input id="reimburseType" class="form-control col-4 offset-1" placeholder="Type of Reimbursement">
             </div>
             <br>
             <div class="row">
-                <input class="form-control col-4" placeholder="Work-Related Justification">
-                <input class="form-control col-4 offset-1" placeholder="Location">
+                <input id="justification" class="form-control col-4" placeholder="Work-Related Justification">
+                <input id="location" class="form-control col-4 offset-1" placeholder="Location">
             </div>
             <br>
             <h4>Optional</h4>
             <br>
             <div class="row">
-                <input class="form-control col-4" placeholder="Additional Attachments">
-                <input class="form-control col-4 offset-1" placeholder="Approval Attachments">
+                <input id="additionalAttachment" class="form-control col-4" placeholder="Additional Attachments">
+                <input id="approvalAttachment" class="form-control col-4 offset-1" placeholder="Approval Attachments">
             </div>
             <br>
             <div class="row">
-                <input class="form-control col-4" placeholder="Work that will be missed.">
+                <input id="missedWork" class="form-control col-4" placeholder="Work that will be missed.">
                 <div id="employeeId" hidden>employeeId</div>
                 <div id="requestId" hidden>requestId</div>
             </div>
             <br>
             <label for="estimate" style="margin-left: 3em;">Reimbursement Estimate</label>
-            <input name="estimate" class="form-control col-4" style="margin-left: 3em;" placeholder="$100.00" readonly>
+            <input id="reimbursementEstimate" name="estimate" class="form-control col-4" style="margin-left: 3em;" placeholder="$100.00" readonly>
             <br>
+            <button id="populateBtn" class="btn btn-secondary col-1">Auto-Populate</button>
             <div class="row">
                 <button id="backBtn" class="btn btn-primary col-1">Back</button>
                 <button id="submitRequest" type="submit" class="btn btn-primary offset-6">Submit Request</button>

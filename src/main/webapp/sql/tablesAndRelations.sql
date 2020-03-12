@@ -29,8 +29,8 @@ CREATE TABLE request(
     -- Required in Form
     employeeId VARCHAR NOT NULL, --fk, for employee info
     reimburseType VARCHAR NOT NULL, --FK: Univ=.8, Seminar=.6, CertClasses=.75; Cert=1, TechTraining=.9, Other=.3
-    eventDate DATE NOT NULL, -- start of event (date)
-    eventTime TIME NOT NULL, -- when submitted (datetime)
+    eventDate VARCHAR NOT NULL, -- start of event (date)
+    eventTime VARCHAR NOT NULL, -- when submitted (datetime)
     eventAddress VARCHAR NOT NULL,
     eventDescription TEXT NOT NULL, -- Could include when the course will be taking place
     eventCost NUMERIC(7,2) NOT NULL,

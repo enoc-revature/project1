@@ -204,24 +204,45 @@ public class PostgresDaoImpl implements PostgresDao {
 	@Override
 	public void createRequest(Request req) {
 		log.trace("createRequest(Request)");
-		Request reqMore = new Request();
+		//Request reqMore = new Request();
 
 		try (Connection conn = ConnectionFactory.getConnection()) {
-			String query = "CALL create_request(?,?,?,?,?,?,?,?,?,?)";
+			String query =
+					"INSERT INTO request" +
+						"(reimburseType, eventDate, pending, employeeId, eventTime," + 
+						"eventAddress, eventDescription, eventCost, gradeFormat, justification) " +
+					"VALUES (?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(query);
+			log.debug("PreparedStatement");
+			/*
+			 IN reimburseType VARCHAR,
+	            IN eventDate DATE,
+	            IN pending BOOLEAN,
+	            IN employeeId VARCHAR,
+	            IN eventTime TIME,
+	            IN eventAddress VARCHAR,
+	            IN eventDescription TEXT,
+	            IN eventCost NUMERIC(7,2),
+	            IN gradeFormat VARCHAR,
+	            IN justification TEXT
+			*/
 			ps.setString(1,req.getReimburseType());
 			ps.setString(2,req.getEventDate());
-			ps.setString(3,req.getEmployeeId());
-			ps.setString(4,req.getEventTime());
-			ps.setString(5,req.getEventAddress());
-			ps.setString(6,req.getEventDescription());
-			ps.setDouble(7,req.getEventCost());
-			ps.setString(8,req.getGradeFormat());
+			ps.setBoolean(3,req.getPending());
+			ps.setString(4,req.getEmployeeId());
+			ps.setString(5,req.getEventTime());
+			ps.setString(6,req.getEventAddress());
+			ps.setString(7,req.getEventDescription());
+			ps.setInt(8,req.getEventCost());
+			log.debug("debug");
 			ps.setString(9,req.getGradeFormat());
 			ps.setString(10,req.getJustification());
+			log.debug("Parameters set to ps");
 			ps.executeUpdate();
+			log.debug("ps.executeUpdate()");
 		} catch (SQLException err) {
 			err.printStackTrace();
+			err.getMessage();
 		}
 		
 	}

@@ -1,15 +1,22 @@
 package com.revature.project1.pojo;
 
 public class Request {
+	@Override
+	public String toString() {
+		return "Request [requestId=" + requestId + ", reimburseType=" + reimburseType + ", eventDate=" + eventDate
+				+ ", pending=" + pending + ", employeeId=" + employeeId + ", eventTime=" + eventTime + ", eventAddress="
+				+ eventAddress + ", eventDescription=" + eventDescription + ", eventCost=" + eventCost
+				+ ", gradeFormat=" + gradeFormat + ", justification=" + justification + "]";
+	}
 	private Integer requestId;
 	private String reimburseType;
 	private String eventDate;
-	private Boolean pending;
+	private boolean pending;
     private String employeeId;
 	private String eventTime;
     private String eventAddress;
     private String eventDescription;
-    private Double eventCost;
+    private int eventCost;
     private String gradeFormat;
     private String justification;
     
@@ -39,10 +46,10 @@ public class Request {
 	public void setEventDescription(String eventDescription) {
 		this.eventDescription = eventDescription;
 	}
-	public Double getEventCost() {
+	public int getEventCost() {
 		return eventCost;
 	}
-	public void setEventCost(Double eventCost) {
+	public void setEventCost(int eventCost) {
 		this.eventCost = eventCost;
 	}
 	public String getGradeFormat() {
@@ -57,10 +64,10 @@ public class Request {
 	public void setJustification(String justification) {
 		this.justification = justification;
 	}
-	public Integer getRequestId() {
+	public int getRequestId() {
 		return requestId;
 	}
-	public void setRequestId(Integer requestId) {
+	public void setRequestId(int requestId) {
 		this.requestId = requestId;
 	}
 	public String getReimburseType() {
@@ -75,10 +82,10 @@ public class Request {
 	public void setEventDate(String eventDate) {
 		this.eventDate = eventDate;
 	}
-	public Boolean getPending() {
+	public boolean getPending() {
 		return pending;
 	}
-	public void setPending(Boolean pending) {
+	public void setPending(boolean pending) {
 		this.pending = pending;
 	}
 

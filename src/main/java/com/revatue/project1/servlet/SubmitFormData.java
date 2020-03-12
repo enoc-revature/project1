@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 
 import com.google.gson.GsonBuilder;
+import com.revature.project1.dao.PostgresDao;
+import com.revature.project1.dao.PostgresDaoImpl;
 import com.revature.project1.pojo.Request;
 
 /**
@@ -62,21 +64,21 @@ public class SubmitFormData extends HttpServlet {
 		if (sess != null && sess.getAttribute("employee") != null) {
 			log.debug("Logged in");
 			log.debug(sess.getAttribute("employee"));
+			PostgresDao dao = new PostgresDaoImpl();
 			String reqJson = request.getReader().readLine();
 			log.debug(reqJson);
 			Request req = new GsonBuilder().create().fromJson(reqJson, Request.class);
 			try {
-				
+				dao.createRequest(req);
+				log.debug("createRequest(Request) finished");
+				log.debug("req.toString() = " + req.toString());
 			} catch(Exception e) {
 				response.setStatus(response.SC_INTERNAL_SERVER_ERROR);
-				response.getWriter().write("Car could not be created");
+				response.getWriter().write("Request could not be created");
 			}
-
 		} else {
 			response.getWriter().write("User not logged in");
 			response.setStatus(response.SC_UNAUTHORIZED);
 		}
-
 	}
-
 }
