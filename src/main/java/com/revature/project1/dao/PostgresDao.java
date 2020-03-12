@@ -9,7 +9,7 @@ public interface PostgresDao {
 	// CRUD methods
 	
 	// CREATE
-	public void createRequest(); // Form Data
+	public void createRequest(Request req); // Form Data
 	
 
 	// READ

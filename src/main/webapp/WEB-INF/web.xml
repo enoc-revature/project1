@@ -50,4 +50,14 @@
     <servlet-name>PopulateEmployeeRequestDetails</servlet-name>
     <url-pattern>/PopulateEmployeeRequestDetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubmitFormData</display-name>
+    <servlet-name>SubmitFormData</servlet-name>
+    <servlet-class>com.revatue.project1.servlet.SubmitFormData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitFormData</servlet-name>
+    <url-pattern>/SubmitFormData</url-pattern>
+  </servlet-mapping>
 </web-app>

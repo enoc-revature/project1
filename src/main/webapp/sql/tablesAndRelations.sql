@@ -24,7 +24,7 @@ CREATE TABLE benco(
 
 DROP TABLE IF EXISTS request;
 CREATE TABLE request(
-    requestId INTEGER PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
+    requestId SERIAL PRIMARY KEY, -- auto-increment and confirmation number. Start at 2948302.
 
     -- Required in Form
     employeeId VARCHAR NOT NULL, --fk, for employee info

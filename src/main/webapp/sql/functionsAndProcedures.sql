@@ -34,6 +34,7 @@ SELECT * FROM request_details(1);
 
 
 -- Trigger for requestId
+/*
 drop function func_insert_request();
 create or replace function func_insert_employee()
 returns trigger as $$
@@ -50,18 +51,65 @@ create trigger trig_insert_employee
 	before insert on request
 	for each row
 		execute procedure func_insert_request();
+*/
 
-DROP FUNCTION request_details(INTEGER);
+DROP PROCEDURE request_details(VARCHAR, DATE, BOOLEAN);
 CREATE OR REPLACE PROCEDURE request_details(
-    IN id INTEGER
+            IN reimburseType VARCHAR,
+            IN eventDate DATE,
+            IN pending BOOLEAN,
+            IN employeeId VARCHAR,
+            IN eventTime TIME,
+            IN eventAddress VARCHAR,
+            IN eventDescription TEXT,
+            IN eventCost NUMERIC(7,2),
+            IN gradeFormat VARCHAR,
+            IN justification TEXT
 ) AS $$
 BEGIN
     INSERT INTO request
-            request.reimburseType,
-            request.eventDate,
-            request.pending,
-            request.requestId
-    VALUES id
+            (reimburseType,
+            eventDate,
+            pending,
+            employeeId,
+            eventTime,
+            eventAddress,
+            eventDescription,
+            eventCost,
+            gradeFormat,
+            justification)
+
+    VALUES (reimburseType,
+            eventDate,
+            pending,
+            employeeId,
+            eventTime,
+            eventAddress,
+            eventDescription,
+            eventCost,
+            gradeFormat,
+            justification);
 END;$$ LANGUAGE plpgsql;
 
-SELECT * FROM request_details(1);
+CALL request_details('TEST_TYPE','2001-01-01', true, 'JS1324', '12:00:00',
+                     '123 Ave.','College Course',
+                     100.00, 'SandardGrading','Stuff');
+
+
+/*
+INSERT INTO request
+        (reimburseType,
+        eventDate,
+        pending,
+        employeeId,
+        eventTime,
+        eventAddress,
+        eventDescription,
+        eventCost,
+        gradeFormat,
+        justification)
+        -- request.requestId
+VALUES ('TEST_TYPE','2001-01-01', true, 'JS1324', '12:00:00','123 Ave.','College Course',
+        100.00, 'SandardGrading','Stuff');
+*/
+SELECT * FROM request;
