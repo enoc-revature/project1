@@ -178,4 +178,26 @@ public class PostgresDaoImpl implements PostgresDao {
 		}
 		return emp;
 	}
+
+	@Override
+	public Request getRequestDetails(Request req) {
+		log.trace("getRequests(Employee)");
+		Request reqMore = new Request();
+
+		try (Connection conn = ConnectionFactory.getConnection()) {
+			String query = "SELECT * FROM request_details(?)";
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setInt(1,req.getRequestId());
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				reqMore.setRequestId(rs.getInt("requestId"));
+				reqMore.setReimburseType(rs.getString("reimburseType"));
+				reqMore.setEventDate(rs.getString("eventDate"));
+				reqMore.setPending(rs.getBoolean("pending"));
+			}
+		} catch (SQLException err) {
+			err.printStackTrace();
+		}
+		return reqMore;
+	}
 }

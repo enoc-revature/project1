@@ -40,4 +40,14 @@
     <servlet-name>MenuPage</servlet-name>
     <url-pattern>/MenuPage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PopulateEmployeeRequestDetails</display-name>
+    <servlet-name>PopulateEmployeeRequestDetails</servlet-name>
+    <servlet-class>com.revatue.project1.servlet.PopulateEmployeeRequestDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PopulateEmployeeRequestDetails</servlet-name>
+    <url-pattern>/PopulateEmployeeRequestDetails</url-pattern>
+  </servlet-mapping>
 </web-app>
