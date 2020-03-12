@@ -115,3 +115,6 @@ INSERT INTO request
 VALUES ('TEST_TYPE','2001-01-01', true, 'JS1324', '12:00:00','123 Ave.','College Course',
         100.00, 'SandardGrading','Stuff');
 */
+
+
+SELECT * FROM benco;

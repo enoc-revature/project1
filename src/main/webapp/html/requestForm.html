@@ -9,10 +9,11 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-      <form class="form-inline" action="/action_page.php">
+      <!-- <form class="form-inline" action="/action_page.php"> -->
+      <form class="form-inline">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
         <button class="btn btn-success" type="submit">Search</button>
-        <button class="btn btn-danger" type="submit">Logout</button>
+        <button id="logoutBtn" class="btn btn-danger" type="submit">Logout</button>
       </form>
     </nav>
     <br><br><br>
@@ -67,6 +68,8 @@
             <div class="row">
                 <button id="backBtn" class="btn btn-primary col-1">Back</button>
                 <button id="submitRequest" type="submit" class="btn btn-primary offset-6">Submit Request</button>
+        rowElem.setAttribute("class", "clickable-row");
+        rowElem.setAttribute("onclick", "window.location.href = 'employeeRequestDetails.html';");
             </div>
         </form>
     </div>

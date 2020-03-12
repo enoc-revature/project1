@@ -1,10 +1,44 @@
 window.onload = function(){
     $("#submitRequest").on("click",sendRequest);
     $("#populateBtn").on("click", autoPopulate);
+    $("#backBtn").on("click",function(){
+        window.location.href = "employeeMenu.html";
+    });
+    $("#logoutBtn").on("click",function(){
+        window.location.href = "login.html";
+    });
     //this.document.getElementById("submitBu").addEventListener("click", addCar, false);
     //this.document.getElementById("addCar").addEventListener("click", addCar, false);
 
 }
+
+/*
+jQuery(document).ready(function() {
+    console.log("Logging Out");
+
+    Parse.$ = jQuery;
+    Parse.initialize("...", "...");
+
+    $("#logoutBtn").on("click", function () {
+        // Prevent Default Submit Event
+        event.preventDefault();
+
+        //logout current user
+        if (Parse.User.current() ) {
+            Parse.User.logOut();
+
+            // check if really logged out
+            if (Parse.User.current())
+                console.log("Failed to log out!");
+        }
+
+        // do redirect
+        //window.location.replace("Sign_In.html");
+        // or
+        window.location.href = "login.html";
+    });
+});
+*/
 
 class Employee{
     constructor(employeeId, employeeFirstName, employeeLastName, employeePassword){

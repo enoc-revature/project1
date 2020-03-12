@@ -1,5 +1,8 @@
 window.onload = function(){
     this.getRequestDetails();
+    $("#logoutBtn").on("click",function(){
+        window.location.href = "login.html";
+    });
 }
 
 //localstorage.setAttribute(req.requestId);

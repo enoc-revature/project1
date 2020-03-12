@@ -1,5 +1,8 @@
 window.onload = function(){
     this.getEmployeeRequests();
+    $("#logoutBtn").on("click",function(){
+        window.location.href = "login.html";
+    });
     //$(".clickable-row").on("click",getRequestDetails);
 }
 

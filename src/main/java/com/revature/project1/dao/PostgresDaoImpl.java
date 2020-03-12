@@ -207,6 +207,7 @@ public class PostgresDaoImpl implements PostgresDao {
 		//Request reqMore = new Request();
 
 		try (Connection conn = ConnectionFactory.getConnection()) {
+			//String query = "CALL create_request(?,?,?,?,?,?,?,?,?,?)"
 			String query =
 					"INSERT INTO request" +
 						"(reimburseType, eventDate, pending, employeeId, eventTime," + 
